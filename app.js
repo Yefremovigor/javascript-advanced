@@ -1,30 +1,20 @@
 'use strict';
 
 function dice(type) {
-    let max;
-    switch (type) {
-        case 'd4':
-            max = 4;
-            break;
-        case 'd6':
-            max = 6;
-            break;
-        case 'd8':
-            max = 8;
-            break;
-        case 'd10':
-            max = 10;
-            break;
-        case 'd12':
-            max = 12;
-            break;
-        case 'd20':
-            max = 20;
-            break;
-        default:
-            return false;
+    const diceSide = {
+        d4: 4,
+        d6: 6,
+        d8: 8,
+        d10: 10,
+        d12: 12,
+        d20: 20
+    };
 
+    if (!diceSide.hasOwnProperty(type)) {
+        return null;
     }
+
+    const max = diceSide[type];
 
     return Math.floor(Math.random() * max + 1);
 }
