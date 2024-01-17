@@ -10,7 +10,7 @@
 const request = new XMLHttpRequest();
 request.open('GET', 'https://pokeapi.co/api/v2/pokemon/ditto');
 request.send();
-request.addEventListener('load', function() {
+request.addEventListener('load', function () {
     if (this.status !== 200) {
         return;
     }
@@ -24,7 +24,7 @@ request.addEventListener('load', function() {
     request.open('GET', abilityURL);
     request.send();
 
-    request.addEventListener('load', function() {
+    request.addEventListener('load', function () {
         if (this.status !== 200) {
             return
         }
@@ -34,4 +34,11 @@ request.addEventListener('load', function() {
         const englishEffect = abilityEffects.find(effect => effect.language.name === 'en').effect;
         console.log(englishEffect);
     })
+
+    request.addEventListener('error', function () {
+        console.log('error');
+    });
+});
+request.addEventListener('error', function () {
+    console.log('error');
 });
