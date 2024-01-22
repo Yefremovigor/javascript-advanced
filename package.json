@@ -1,5 +1,24 @@
 {
-  "dependencies": {
-    "live-server": "^1.2.2"
-  }
+  "name": "user-task",
+  "version": "1.0.0",
+  "description": "Cool project",
+  "main": "index.js",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "rollup": "^4.9.6"
+  },
+  "scripts": {
+    "start": "live-server",
+    "build": "rollup index.js --file bundle.js --format iife"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yefremovigor/javascript-advanced.git"
+  },
+  "author": "Yefremov Igor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yefremovigor/javascript-advanced/issues"
+  },
+  "homepage": "https://github.com/Yefremovigor/javascript-advanced#readme"
 }
